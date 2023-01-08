@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Gallery } from "react-grid-gallery";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SearchBar from "./searchbar.js";
 
 const PEXELS_API_KEY =
@@ -62,16 +62,21 @@ function PhotoGallery() {
         hasMore={hasMore}
         loader={<p>Loading...</p>}
       >
-        <Gallery
-          images={photos.map((photo) => ({
-            src: photo.src.large,
-            thumbnail: photo.src.medium,
-            thumbnailWidth: photo.width / 3,
-            thumbnailHeight: photo.height / 4,
-          }))}
-          enableImageSelection={false}
-          rowHeight={200}
-        />
+        <div>
+          <ResponsiveMasonry
+            ColumnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+          >
+            <Masonry>
+              {photos.map((photo, i) => (
+                <img
+                  key={i}
+                  src={photo.src.large}
+                  style={{ width: "100%", display: "block" }}
+                />
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+        </div>
       </InfiniteScroll>
     </div>
   );

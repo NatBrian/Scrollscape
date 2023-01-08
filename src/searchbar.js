@@ -26,19 +26,30 @@ function SearchBar(props) {
       .catch((error) => {
         console.error(error);
       });
-
-    this.setPhotos = this.setPhotos.bind(this);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-      />
-      <button type="submit">Search</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} class="field has-addons">
+        <p class="control is-expanded">
+          <input
+            class="input"
+            type="text"
+            placeholder="Japanese sakura blossom"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </p>
+        <p class="control">
+          <button type="submit" class="button is-black">
+            <span>Search</span>
+            <span class="icon is-small">
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
+        </p>
+      </form>
+    </div>
   );
 }
 
