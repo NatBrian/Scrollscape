@@ -5,7 +5,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SearchBar from "./searchbar.js";
 
 const PEXELS_API_KEY =
-  "***REMOVED***";
+  "API KEY";
 const PEXELS_API_URL = "https://api.pexels.com/v1/curated";
 
 function PhotoGallery() {

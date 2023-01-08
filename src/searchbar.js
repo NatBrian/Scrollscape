@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const PEXELS_API_KEY =
-  "***REMOVED***";
+  "API KEY";
 const PEXELS_API_URL = "https://api.pexels.com/v1/search";
 
 function SearchBar(props) {
