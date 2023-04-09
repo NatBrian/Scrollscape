@@ -30,21 +30,21 @@ function SearchBar(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} class="field has-addons">
-        <p class="control is-expanded">
+      <form onSubmit={handleSubmit} className="field has-addons">
+        <p className="control is-expanded">
           <input
-            class="input"
+            className="input"
             type="text"
-            placeholder="Japanese sakura blossom"
+            placeholder="Search trending photos..."
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
         </p>
-        <p class="control">
-          <button type="submit" class="button is-black">
+        <p className="control">
+          <button type="submit" className="button is-black">
             <span>Search</span>
-            <span class="icon is-small">
-              <i class="fas fa-search"></i>
+            <span className="icon is-small">
+              <i className="fas fa-search"></i>
             </span>
           </button>
         </p>
